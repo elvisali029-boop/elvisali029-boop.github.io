@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="72" viewBox="0 0 1200 72">
+<style>
+  text { font: 700 26px 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #f4f4f7; fill-opacity: .4; }
+  .e { font-size: 15px; fill: #f26b3a; fill-opacity: .8; }
+  .piste { animation: glisse 28s linear infinite; }
+  @keyframes glisse { to { transform: translateX(-1780px); } }
+</style>
+<defs><linearGradient id="f"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".12" stop-color="#fff"/><stop offset=".88" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m"><rect width="1200" height="72" fill="url(#f)"/></mask></defs>
+<rect width="1200" height="72" rx="16" fill="#0b0b12"/>
+<g mask="url(#m)"><g class="piste"><text x="0" y="47">React</text><text class="e" x="97" y="44">✦</text><text x="145" y="47">TypeScript</text><text class="e" x="317" y="44">✦</text><text x="365" y="47">Flutter</text><text class="e" x="492" y="44">✦</text><text x="540" y="47">Supabase</text><text class="e" x="682" y="44">✦</text><text x="730" y="47">PostgreSQL</text><text class="e" x="902" y="44">✦</text><text x="950" y="47">PostGIS</text><text class="e" x="1077" y="44">✦</text><text x="1125" y="47">Vite</text><text class="e" x="1207" y="44">✦</text><text x="1255" y="47">MapLibre</text><text class="e" x="1397" y="44">✦</text><text x="1445" y="47">Vercel</text><text class="e" x="1557" y="44">✦</text><text x="1605" y="47">Android</text><text class="e" x="1732" y="44">✦</text><text x="1780" y="47">React</text><text class="e" x="1877" y="44">✦</text><text x="1925" y="47">TypeScript</text><text class="e" x="2097" y="44">✦</text><text x="2145" y="47">Flutter</text><text class="e" x="2272" y="44">✦</text><text x="2320" y="47">Supabase</text><text class="e" x="2462" y="44">✦</text><text x="2510" y="47">PostgreSQL</text><text class="e" x="2682" y="44">✦</text><text x="2730" y="47">PostGIS</text><text class="e" x="2857" y="44">✦</text><text x="2905" y="47">Vite</text><text class="e" x="2987" y="44">✦</text><text x="3035" y="47">MapLibre</text><text class="e" x="3177" y="44">✦</text><text x="3225" y="47">Vercel</text><text class="e" x="3337" y="44">✦</text><text x="3385" y="47">Android</text><text class="e" x="3512" y="44">✦</text></g></g>
+</svg>
