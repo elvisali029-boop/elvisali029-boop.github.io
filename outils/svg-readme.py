@@ -132,10 +132,10 @@ def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces):
 </svg>'''
 
 (out / 'atlas.svg').write_text(carte('ATLAS', 'atlas', '01 · PLACE DE MARCHÉ', '#f26b3a', '#f26b3a', '#14213d',
-    ['Boutiques vérifiées de Goma : articles livrés', 'à moto, locations, services. Paiement bloqué', "jusqu'au code donné au livreur.", '290+ tests de la base · 170+ tests du site'],
+    ['Commande. Paie. Reçois.', "L'argent reste bloqué jusqu'à ce que tu", 'donnes ton code au livreur.', 'Personne n\'est payé avant la livraison.'],
     ['React', 'TypeScript', 'Supabase', 'PostGIS', 'Android']), encoding='utf-8')
 (out / 'kitty.svg').write_text(carte('Kitty', 'kitty', '02 · MULTI-VENDEURS', '#e9a91b', '#7a2a63', '#e9a91b',
-    ['Un panier, plusieurs boutiques : une commande', "par boutique, validation par l'admin,", 'espace livreur et panel séparé.', '77 tests de la base'],
+    ['Un panier. Plusieurs boutiques.', 'Chaque vendeur tient sa vitrine,', 'chaque commande trouve son livreur.', "Les boutiques sont validées par l'admin."],
     ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Android']), encoding='utf-8')
 
 # 3. Bandeau des technologies qui défile

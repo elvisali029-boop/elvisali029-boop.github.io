@@ -32,7 +32,7 @@
   <g class="gauche">
     <text class="tag" x="56" y="92">01 · PLACE DE MARCHÉ</text>
     <text class="nom" x="52" y="168">ATLAS</text>
-    <text class="txt" x="56" y="232">Boutiques vérifiées de Goma : articles livrés</text><text class="txt" x="56" y="262">à moto, locations, services. Paiement bloqué</text><text class="txt" x="56" y="292">jusqu'au code donné au livreur.</text><text class="txt" x="56" y="322">290+ tests de la base · 170+ tests du site</text>
+    <text class="txt" x="56" y="232">Commande. Paie. Reçois.</text><text class="txt" x="56" y="262">L'argent reste bloqué jusqu'à ce que tu</text><text class="txt" x="56" y="292">donnes ton code au livreur.</text><text class="txt" x="56" y="322">Personne n'est payé avant la livraison.</text>
     <rect x="56" y="372" width="63" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="87.5" y="393" text-anchor="middle">React</text><rect x="127" y="372" width="108" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="181.0" y="393" text-anchor="middle">TypeScript</text><rect x="243" y="372" width="90" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="288.0" y="393" text-anchor="middle">Supabase</text><rect x="341" y="372" width="81" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="381.5" y="393" text-anchor="middle">PostGIS</text><rect x="430" y="372" width="81" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="470.5" y="393" text-anchor="middle">Android</text>
   </g>
   <rect class="lueur" x="660" y="120" width="420" height="300" rx="60" fill="url(#l)" opacity=".55" filter="url(#flou)"/>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+<style>
+  .grand { font: 800 64px 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: -2px; }
+  .petit { font: 400 21px 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #9a9ab0; }
+  .btn { font: 700 19px 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #0b0b12; }
+  .entre { opacity: 0; animation: entre 1s cubic-bezier(.22,1,.36,1) forwards; }
+  .d2 { animation-delay: .15s; } .d3 { animation-delay: .3s; } .d4 { animation-delay: .45s; }
+  @keyframes entre { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .b { animation: bouge 14s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes bouge { 50% { transform: translate(80px, -30px) scale(1.15); } }
+  .fleche { animation: fleche 1.4s ease-in-out infinite; }
+  @keyframes fleche { 50% { transform: translateX(6px); } }
+</style>
+<defs>
+  <linearGradient id="deg" x1="0" x2="1">
+    <stop offset="0" stop-color="#3b82f6"/><stop offset=".45" stop-color="#f26b3a"/><stop offset=".75" stop-color="#e9a91b"/><stop offset="1" stop-color="#3b82f6"/>
+    <animate attributeName="x1" values="0;-1;0" dur="6s" repeatCount="indefinite"/><animate attributeName="x2" values="1;0;1" dur="6s" repeatCount="indefinite"/>
+  </linearGradient>
+  <filter id="f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+  <clipPath id="cadre"><rect width="1200" height="300" rx="24"/></clipPath>
+</defs>
+<g clip-path="url(#cadre)">
+  <rect width="1200" height="300" fill="#0b0b12"/>
+  <circle class="b" cx="300" cy="300" r="170" fill="#7a2a63" opacity=".55" filter="url(#f)"/>
+  <circle class="b" cx="950" cy="20" r="150" fill="#3b82f6" opacity=".3" filter="url(#f)" style="animation-direction:reverse"/>
+  <text class="grand entre" x="600" y="104" text-anchor="middle" fill="#f4f4f7">Un projet en tête ?</text>
+  <text class="grand entre d2" x="600" y="172" text-anchor="middle" fill="url(#deg)">Parlons-en.</text>
+  <text class="petit entre d3" x="600" y="212" text-anchor="middle">Une boutique en ligne, une appli, une idée pour Goma.</text>
+  <g class="entre d4">
+    <rect x="490" y="232" width="220" height="48" rx="24" fill="#f4f4f7"/>
+    <text class="btn" x="584" y="263" text-anchor="middle">M'écrire</text>
+    <g class="fleche"><path d="M650 256h20m-8-8 8 8-8 8" stroke="#0b0b12" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+</g>
+<rect x=".5" y=".5" width="1199" height="299" rx="24" fill="none" stroke="#fff" stroke-opacity=".08"/>
+</svg>

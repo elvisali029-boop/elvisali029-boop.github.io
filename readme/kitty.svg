@@ -32,7 +32,7 @@
   <g class="gauche">
     <text class="tag" x="56" y="92">02 · MULTI-VENDEURS</text>
     <text class="nom" x="52" y="168">Kitty</text>
-    <text class="txt" x="56" y="232">Un panier, plusieurs boutiques : une commande</text><text class="txt" x="56" y="262">par boutique, validation par l'admin,</text><text class="txt" x="56" y="292">espace livreur et panel séparé.</text><text class="txt" x="56" y="322">77 tests de la base</text>
+    <text class="txt" x="56" y="232">Un panier. Plusieurs boutiques.</text><text class="txt" x="56" y="262">Chaque vendeur tient sa vitrine,</text><text class="txt" x="56" y="292">chaque commande trouve son livreur.</text><text class="txt" x="56" y="322">Les boutiques sont validées par l'admin.</text>
     <rect x="56" y="372" width="63" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="87.5" y="393" text-anchor="middle">React</text><rect x="127" y="372" width="108" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="181.0" y="393" text-anchor="middle">TypeScript</text><rect x="243" y="372" width="90" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="288.0" y="393" text-anchor="middle">Supabase</text><rect x="341" y="372" width="108" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="395.0" y="393" text-anchor="middle">PostgreSQL</text><rect x="457" y="372" width="81" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="497.5" y="393" text-anchor="middle">Android</text>
   </g>
   <rect class="lueur" x="660" y="120" width="420" height="300" rx="60" fill="url(#l)" opacity=".55" filter="url(#flou)"/>
