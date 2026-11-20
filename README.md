@@ -2,4 +2,4 @@
 
 Site : https://elvisali029-boop.github.io
 
-ATLAS et Kitty, deux places de marché pour Goma.
+RHEEKA (marketplace, rheeka.com) et Kitty (messagerie), deux applis pour Goma.

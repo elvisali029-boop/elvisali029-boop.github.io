@@ -11,11 +11,11 @@
   <rect x="24" y="24" width="270" height="4" rx="2" fill="#f26b3a"><animate attributeName="width" from="0" to="270" begin="0.45s" dur="1s" fill="freeze"/></rect>
   <text class="n" x="50" y="112" fill="#f26b3a">2</text>
   <text class="l" x="50" y="152">applis en ligne</text>
-  <text class="d" x="50" y="182">ATLAS et Kitty</text>
+  <text class="d" x="50" y="182">RHEEKA et Kitty</text>
 </g><g class="entre" style="animation-delay:0.30s">
   <rect x="318" y="24" width="270" height="192" rx="18" fill="#151522" stroke="#fff" stroke-opacity=".07"/>
   <rect x="318" y="24" width="270" height="4" rx="2" fill="#3b82f6"><animate attributeName="width" from="0" to="270" begin="0.60s" dur="1s" fill="freeze"/></rect>
-  <text class="n" x="344" y="112" fill="#3b82f6">370+</text>
+  <text class="n" x="344" y="112" fill="#3b82f6">560+</text>
   <text class="l" x="344" y="152">tests de base de données</text>
   <text class="d" x="344" y="182">chaque règle vérifiée</text>
 </g><g class="entre" style="animation-delay:0.45s">
@@ -27,8 +27,8 @@
 </g><g class="entre" style="animation-delay:0.60s">
   <rect x="906" y="24" width="270" height="192" rx="18" fill="#151522" stroke="#fff" stroke-opacity=".07"/>
   <rect x="906" y="24" width="270" height="4" rx="2" fill="#2dd4bf"><animate attributeName="width" from="0" to="270" begin="0.90s" dur="1s" fill="freeze"/></rect>
-  <text class="n" x="932" y="112" fill="#2dd4bf">4</text>
-  <text class="l" x="932" y="152">espaces par appli</text>
-  <text class="d" x="932" y="182">client, vendeur, livreur, admin</text>
+  <text class="n" x="932" y="112" fill="#2dd4bf">72</text>
+  <text class="l" x="932" y="152">stickers originaux</text>
+  <text class="d" x="932" y="182">dessinés pour Kitty</text>
 </g>
 </svg>

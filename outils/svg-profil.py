@@ -42,9 +42,9 @@ def terminal():
         ('out', 'Des applis qui tiennent le terrain : réseau qui coupe,'),
         ('out', 'téléphones modestes, paiement par mobile money.'),
         ('cmd', 'ls projets/'),
-        ('dir', 'ATLAS/     Kitty/     Manga_site/'),
+        ('dir', 'RHEEKA/    Kitty/     Manga_site/'),
         ('cmd', 'cat stack.txt'),
-        ('out', 'Flutter · React · TypeScript · Supabase · PostgreSQL'),
+        ('out', 'Flutter · React · TypeScript · Supabase · PostgreSQL · LiveKit'),
         ('cmd', 'echo $STATUT'),
         ('ok',  'Ouvert aux collaborations. Toujours en train d\'apprendre.'),
     ]
@@ -137,10 +137,10 @@ def contact():
 
 def chiffres():
     """Quatre grands chiffres qui montent l'un après l'autre."""
-    items = [('2', 'applis en ligne', 'ATLAS et Kitty', '#f26b3a'),
-             ('370+', 'tests de base de données', 'chaque règle vérifiée', '#3b82f6'),
+    items = [('2', 'applis en ligne', 'RHEEKA et Kitty', '#f26b3a'),
+             ('560+', 'tests de base de données', 'chaque règle vérifiée', '#3b82f6'),
              ('18', 'quartiers de Goma', 'dessinés sur la carte', '#e9a91b'),
-             ('4', 'espaces par appli', 'client, vendeur, livreur, admin', '#2dd4bf')]
+             ('72', 'stickers originaux', 'dessinés pour Kitty', '#2dd4bf')]
     corps = ''
     for i, (n, label, detail, c) in enumerate(items):
         x = 24 + i * 294
@@ -165,7 +165,7 @@ def chiffres():
     (out / 'chiffres.svg').write_text(svg, encoding='utf-8')
 
 titre('titre-apropos.svg', '01', 'À propos', 'qui je suis, ce que je construis')
-titre('titre-projets.svg', '02', 'Projets', 'deux places de marché pour Goma')
+titre('titre-projets.svg', '02', 'Projets', 'une marketplace, une messagerie')
 titre('titre-stack.svg', '03', 'Stack', 'les outils de tous les jours')
 titre('titre-chiffres.svg', '04', 'En chiffres', 'ce qui tourne déjà')
 titre('titre-contact.svg', '05', 'Contact', 'on construit ensemble ?')

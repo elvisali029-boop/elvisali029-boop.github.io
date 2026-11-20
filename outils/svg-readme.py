@@ -54,9 +54,9 @@ banniere = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360"
   <text class="titre" x="60" y="262" fill="url(#deg)">Iro007.</text></g>
   <g class="entre d3">
     <text class="sous" x="60" y="318">Je construis</text>
-    <text class="sous mot" x="200" y="318" style="fill:#f4f4f7">des places de marché.</text>
-    <text class="sous mot m2" x="200" y="318" style="fill:#f4f4f7">des applis mobiles.</text>
-    <text class="sous mot m3" x="200" y="318" style="fill:#f4f4f7">des sites rapides.</text>
+    <text class="sous mot" x="200" y="318" style="fill:#f4f4f7">des marketplaces.</text>
+    <text class="sous mot m2" x="200" y="318" style="fill:#f4f4f7">des messageries.</text>
+    <text class="sous mot m3" x="200" y="318" style="fill:#f4f4f7">des applis mobiles.</text>
     <text class="sous mot m4" x="200" y="318" style="fill:#f4f4f7">pour Goma.</text>
   </g>
   <circle class="aura" cx="960" cy="180" r="150" fill="url(#aura)"/>
@@ -131,15 +131,15 @@ def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces):
 </g>
 </svg>'''
 
-(out / 'atlas.svg').write_text(carte('ATLAS', 'atlas', '01 · PLACE DE MARCHÉ', '#f26b3a', '#f26b3a', '#14213d',
+(out / 'rheeka.svg').write_text(carte('RHEEKA', 'rheeka', '01 · MARKETPLACE · RHEEKA.COM', '#f26b3a', '#f26b3a', '#14213d',
     ['Commande. Paie. Reçois.', "L'argent reste bloqué jusqu'à ce que tu", 'donnes ton code au livreur.', 'Personne n\'est payé avant la livraison.'],
     ['React', 'TypeScript', 'Supabase', 'PostGIS', 'Android']), encoding='utf-8')
-(out / 'kitty.svg').write_text(carte('Kitty', 'kitty', '02 · MULTI-VENDEURS', '#e9a91b', '#7a2a63', '#e9a91b',
-    ['Un panier. Plusieurs boutiques.', 'Chaque vendeur tient sa vitrine,', 'chaque commande trouve son livreur.', "Les boutiques sont validées par l'admin."],
-    ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Android']), encoding='utf-8')
+(out / 'kitty.svg').write_text(carte('Kitty', 'kitty', '02 · MESSAGERIE', '#8fb0ff', '#9b5de5', '#5b82dd',
+    ['Écris. Appelle. Partage.', 'Appels vidéo, groupes, statuts de 24 h,', 'sondages, position, 72 stickers maison.', 'La confidentialité est tenue par la base.'],
+    ['React', 'TypeScript', 'Realtime', 'LiveKit', 'Web Push']), encoding='utf-8')
 
 # 3. Bandeau des technologies qui défile
-techs = ['React', 'TypeScript', 'Flutter', 'Supabase', 'PostgreSQL', 'PostGIS', 'Vite', 'MapLibre', 'Vercel', 'Android']
+techs = ['React', 'TypeScript', 'Flutter', 'Supabase', 'PostgreSQL', 'PostGIS', 'Vite', 'MapLibre', 'LiveKit', 'Web Push', 'Vercel', 'Android']
 x, items = 0, ''
 for t in techs * 2:
     items += f'<text x="{x}" y="47">{t}</text><text class="e" x="{x + len(t)*15 + 22}" y="44">✦</text>'

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Iro007 · Développeur web et mobile à Goma (ATLAS, Kitty)</title>
-<meta name="description" content="Iro007, développeur web et mobile à Goma (RDC). Portfolio : ATLAS et Kitty, deux places de marché avec paiement mobile money et livraison. React, Flutter, Supabase.">
+<title>Iro007 · Développeur web et mobile à Goma (RHEEKA, Kitty)</title>
+<meta name="description" content="Iro007, développeur web et mobile à Goma (RDC). Portfolio : RHEEKA, la marketplace de Goma (mobile money, livraison à moto), et Kitty, une messagerie avec appels vidéo, statuts et groupes. React, Flutter, Supabase.">
 <meta name="author" content="Iro007">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://elvisali029-boop.github.io/">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Iro007">
 <meta property="og:url" content="https://elvisali029-boop.github.io/">
 <meta property="og:title" content="Iro007 · Développeur web et mobile à Goma">
-<meta property="og:description" content="ATLAS et Kitty, deux places de marché construites pour Goma.">
+<meta property="og:description" content="RHEEKA, la marketplace de Goma, et Kitty, une messagerie complète.">
 <meta property="og:image" content="https://elvisali029-boop.github.io/images/partage.png">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
@@ -31,12 +31,12 @@
     "image": "https://elvisali029-boop.github.io/images/photo.webp",
     "url": "https://elvisali029-boop.github.io/",
     "address": { "@type": "PostalAddress", "addressLocality": "Goma", "addressCountry": "CD" },
-    "knowsAbout": ["React", "TypeScript", "Flutter", "Supabase", "PostgreSQL", "Développement web", "Développement mobile"],
+    "knowsAbout": ["React", "TypeScript", "Flutter", "Supabase", "PostgreSQL", "WebRTC", "Développement web", "Développement mobile"],
     "sameAs": ["https://github.com/elvisali029-boop"]
   },
   "hasPart": [
-    { "@type": "WebApplication", "name": "ATLAS", "url": "https://atlas-goma.vercel.app", "applicationCategory": "ShoppingApplication", "description": "Place de marché de Goma : articles livrés, locations, services, paiement mobile money.", "author": { "@type": "Person", "name": "Iro007" } },
-    { "@type": "WebApplication", "name": "Kitty", "url": "https://kitty-goma.vercel.app", "applicationCategory": "ShoppingApplication", "description": "Place de marché multi-vendeurs de Goma.", "author": { "@type": "Person", "name": "Iro007" } }
+    { "@type": "WebApplication", "name": "RHEEKA", "url": "https://rheeka.com", "applicationCategory": "ShoppingApplication", "description": "Marketplace de Goma : articles livrés à moto, locations, services, paiement mobile money en séquestre.", "author": { "@type": "Person", "name": "Iro007" } },
+    { "@type": "WebApplication", "name": "Kitty", "url": "https://kitty-goma.vercel.app", "applicationCategory": "CommunicationApplication", "description": "Messagerie : discussions en direct, groupes, appels audio et vidéo, statuts 24 h, notifications.", "author": { "@type": "Person", "name": "Iro007" } }
   ]
 }
 </script>
@@ -49,7 +49,7 @@
   :root {
     --bg: #0b0b12; --card: #151522; --line: rgba(255,255,255,.08);
     --text: #f4f4f7; --muted: #9a9ab0; --orange: #f26b3a; --gold: #e9a91b; --plum: #7a2a63;
-    --navy: #14213d; --teal: #2dd4bf; --blue: #3b82f6;
+    --navy: #14213d; --teal: #2dd4bf; --blue: #3b82f6; --kitty: #5b82dd; --kitty2: #9b5de5;
     --ease: cubic-bezier(.22,1,.36,1);
   }
   * { box-sizing: border-box; }
@@ -166,8 +166,8 @@
   .projet.inverse .scene { order: 2; }
   .scene { position: relative; perspective: 1400px; padding: 30px 40px 40px 0; }
   .scene .lueur { position: absolute; inset: 10% 15% 5% 5%; border-radius: 40px; filter: blur(70px); opacity: .55; z-index: 0; }
-  .atlas .lueur { background: linear-gradient(135deg, var(--orange), var(--navy)); }
-  .kitty .lueur { background: linear-gradient(135deg, var(--plum), var(--gold)); }
+  .rheeka .lueur { background: linear-gradient(135deg, var(--orange), var(--navy)); }
+  .kitty .lueur { background: linear-gradient(135deg, var(--kitty2), var(--kitty)); }
   .inclinable { position: relative; z-index: 1; transform-style: preserve-3d; transition: transform .6s var(--ease); }
   .ecran { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 40px 80px -30px rgba(0,0,0,.8); background: #000; }
   .ecran .barre { height: 26px; display: flex; gap: 6px; align-items: center; padding: 0 12px; background: #1c1c28; }
@@ -177,9 +177,9 @@
   .tel { position: absolute; right: 0; bottom: 0; width: 30%; border-radius: 26px; overflow: hidden; border: 5px solid #1c1c28;
          box-shadow: 0 30px 60px -20px rgba(0,0,0,.9); transform: translateZ(60px); animation: flotte 6s ease-in-out infinite; }
   .infos .tag { display: inline-flex; font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
-  .atlas { --accent: var(--orange); } .kitty { --accent: var(--gold); }
-  .atlas .tag { background: rgba(242,107,58,.12); color: var(--orange); }
-  .kitty .tag { background: rgba(233,169,27,.12); color: var(--gold); }
+  .rheeka { --accent: var(--orange); } .kitty { --accent: var(--kitty); }
+  .rheeka .tag { background: rgba(242,107,58,.12); color: var(--orange); }
+  .kitty .tag { background: rgba(91,130,221,.14); color: #8fb0ff; }
   .infos h3 { font-size: clamp(40px, 5vw, 60px); letter-spacing: -.04em; margin: 14px 0 10px; line-height: 1; }
   .infos > p { color: var(--muted); margin: 0 0 22px; font-size: 17px; }
   .points { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 10px; }
@@ -278,8 +278,8 @@
       <div class="aura"></div>
       <div class="anneau"></div>
       <div class="cadre"><img src="images/photo.webp" alt="Photo de profil d'Iro007" width="400" height="400"></div>
-      <div class="etiquette e1">ATLAS<small>place de marché</small></div>
-      <div class="etiquette e2">Kitty<small>multi-vendeurs</small></div>
+      <div class="etiquette e1">RHEEKA<small>marketplace</small></div>
+      <div class="etiquette e2">Kitty<small>messagerie</small></div>
     </div>
   </div>
   <a class="defile" href="#projets" aria-label="Descendre"></a>
@@ -287,8 +287,8 @@
 
 <div class="bandeau" aria-hidden="true">
   <div class="piste">
-    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>Vercel</span><span>Android</span>
-    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>Vercel</span><span>Android</span>
+    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>LiveKit</span><span>Web Push</span><span>Vercel</span><span>Android</span>
+    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>LiveKit</span><span>Web Push</span><span>Vercel</span><span>Android</span>
   </div>
 </div>
 
@@ -296,36 +296,36 @@
   <section class="bloc" id="projets">
     <div class="wrap">
       <div class="surtitre apparait">Projets phares</div>
-      <h2 class="titre apparait" style="--d:.08s">Deux places de marché,<br>pensées pour Goma.</h2>
+      <h2 class="titre apparait" style="--d:.08s">Une marketplace, une messagerie,<br>pensées pour Goma.</h2>
 
-      <article class="projet atlas">
+      <article class="projet rheeka">
         <div class="scene apparait">
           <div class="lueur"></div>
           <div class="inclinable">
             <div class="ecran"><div class="barre"><i></i><i></i><i></i></div>
-              <img src="images/atlas-ordi.webp" alt="Page d'accueil d'ATLAS sur ordinateur" width="1440" height="900"></div>
-            <div class="tel"><img src="images/atlas-tel.webp" alt="ATLAS sur téléphone" width="780" height="1688"></div>
+              <img src="images/rheeka-ordi.webp" alt="Page d'accueil de RHEEKA sur ordinateur" width="1440" height="900"></div>
+            <div class="tel"><img src="images/rheeka-tel.webp" alt="RHEEKA sur téléphone" width="780" height="1688"></div>
           </div>
         </div>
         <div class="infos">
-          <span class="tag apparait">01 · Place de marché</span>
-          <h3 class="apparait" style="--d:.05s">ATLAS</h3>
-          <p class="apparait" style="--d:.1s">Les boutiques vérifiées de Goma en ligne : articles livrés à moto, locations à réserver, services sur rendez-vous. Le client paie avant, l'argent reste bloqué jusqu'à ce qu'il donne son code au livreur.</p>
+          <span class="tag apparait">01 · Marketplace</span>
+          <h3 class="apparait" style="--d:.05s">RHEEKA</h3>
+          <p class="apparait" style="--d:.1s">La marketplace de Goma, sur son propre domaine : articles livrés à moto, locations à réserver, services sur rendez-vous. Le client paie avant, l'argent reste bloqué jusqu'à ce qu'il donne son code au livreur.</p>
           <ul class="points apparait" style="--d:.15s">
             <li>Espaces client, vendeur, livreur et administration</li>
             <li>Paiement en séquestre, libéré par code ou QR code</li>
             <li>Livreur le plus proche choisi automatiquement</li>
-            <li>Adresse exacte sur la carte, trajet du livreur</li>
+            <li>Connexion Google, référencé sur Google, installable</li>
           </ul>
           <div class="chiffres apparait" style="--d:.2s">
-            <div><b data-compte="290" data-plus>290+</b><span>tests de la base</span></div>
-            <div><b data-compte="170" data-plus>170+</b><span>tests du site</span></div>
-            <div><b data-compte="24">24</b><span>migrations SQL</span></div>
+            <div><b data-compte="330" data-plus>330+</b><span>tests de la base</span></div>
+            <div><b data-compte="210" data-plus>210+</b><span>tests du site</span></div>
+            <div><b data-compte="28">28</b><span>migrations SQL</span></div>
           </div>
           <div class="puces apparait" style="--d:.25s"><span>React</span><span>TypeScript</span><span>Supabase</span><span>PostGIS</span><span>MapLibre</span><span>Android</span></div>
-          <a class="btn plein apparait" style="--d:.3s" href="https://atlas-goma.vercel.app">Voir la démo
+          <a class="btn plein apparait" style="--d:.3s" href="https://rheeka.com">Voir rheeka.com
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <p class="note">Version de test, paiement simulé. Code source privé.</p>
+          <p class="note">En test, paiement simulé. <a href="https://decouvrir.rheeka.com" style="text-decoration:underline">Découvrir RHEEKA</a>. Code source privé.</p>
         </div>
       </article>
 
@@ -334,27 +334,27 @@
           <div class="lueur"></div>
           <div class="inclinable">
             <div class="ecran"><div class="barre"><i></i><i></i><i></i></div>
-              <img src="images/kitty-ordi.webp" alt="Page d'accueil de Kitty sur ordinateur" width="1440" height="900"></div>
-            <div class="tel"><img src="images/kitty-tel.webp" alt="Kitty sur téléphone" width="780" height="1688"></div>
+              <img src="images/kitty-ordi.webp" alt="Une discussion dans Kitty sur ordinateur" width="1440" height="900"></div>
+            <div class="tel"><img src="images/kitty-tel.webp" alt="Un groupe avec un sondage dans Kitty sur téléphone" width="780" height="1688"></div>
           </div>
         </div>
         <div class="infos">
-          <span class="tag apparait">02 · Multi-vendeurs</span>
+          <span class="tag apparait">02 · Messagerie</span>
           <h3 class="apparait" style="--d:.05s">Kitty</h3>
-          <p class="apparait" style="--d:.1s">Un seul panier pour plusieurs boutiques de Goma. L'achat est découpé en une commande par boutique, la plateforme prend sa commission, ses livreurs livrent à domicile.</p>
+          <p class="apparait" style="--d:.1s">Une messagerie complète : discussions en direct, groupes, appels audio et vidéo, statuts de 24 h, vocaux, photos, vidéos, fichiers, position, sondages. Avec ses propres stickers, dessinés pour l'appli.</p>
           <ul class="points apparait" style="--d:.15s">
-            <li>Chacun ouvre sa boutique, l'admin valide</li>
-            <li>Espace vendeur : produits, photos, stock, commandes</li>
-            <li>Espace livreur et panel d'administration séparé</li>
-            <li>Règles d'accès vérifiées par la base elle-même</li>
+            <li>Appels audio et vidéo, notifications même appli fermée</li>
+            <li>« écrit… », distribué, vu, en ligne, réponses, réactions</li>
+            <li>Confidentialité tenue par la base : mode fantôme, verrou</li>
+            <li>Couleurs tirées du fond d'écran, 72 stickers originaux</li>
           </ul>
           <div class="chiffres apparait" style="--d:.2s">
-            <div><b data-compte="77">77</b><span>tests de la base</span></div>
-            <div><b data-compte="7">7</b><span>migrations SQL</span></div>
-            <div><b data-compte="4">4</b><span>espaces</span></div>
+            <div><b data-compte="230" data-plus>230+</b><span>tests de la base</span></div>
+            <div><b data-compte="100" data-plus>100+</b><span>essais navigateur</span></div>
+            <div><b data-compte="17">17</b><span>migrations SQL</span></div>
           </div>
-          <div class="puces apparait" style="--d:.25s"><span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>Android</span></div>
-          <a class="btn plein apparait" style="--d:.3s" href="https://kitty-goma.vercel.app">Voir la démo
+          <div class="puces apparait" style="--d:.25s"><span>React</span><span>TypeScript</span><span>Supabase Realtime</span><span>LiveKit</span><span>Web Push</span><span>Playwright</span></div>
+          <a class="btn plein apparait" style="--d:.3s" href="https://kitty-goma.vercel.app">Essayer Kitty
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <p class="note">Version de test. Code source privé.</p>
         </div>
@@ -378,7 +378,7 @@
             <h4>Mobile d'abord</h4><p>Pensé pour le téléphone, installable comme une appli.</p></div>
           <div class="carte apparait" style="--d:.08s">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
-            <h4>Sécurité en base</h4><p>Row Level Security et fonctions SQL testées.</p></div>
+            <h4>Sécurité en base</h4><p>Row Level Security et des centaines de tests SQL.</p></div>
           <div class="carte apparait" style="--d:.16s">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <h4>Cartes et livraison</h4><p>Quartiers, épingle exacte, livreur le plus proche.</p></div>
@@ -396,7 +396,7 @@
       <img class="mini apparait" src="images/photo.webp" alt="" width="84" height="84">
       <div class="surtitre apparait">Contact</div>
       <h2 class="titre apparait" style="--d:.08s">Un projet en tête ?<br><span class="degrade">Parlons-en.</span></h2>
-      <p class="apparait" style="--d:.16s">Une boutique en ligne, une appli, une idée pour Goma : écris-moi.</p>
+      <p class="apparait" style="--d:.16s">Une boutique en ligne, une messagerie, une appli, une idée pour Goma : écris-moi.</p>
       <div class="actions apparait" style="--d:.24s">
         <a class="btn plein" href="mailto:elvisali029@gmail.com">M'écrire
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -413,7 +413,7 @@
   const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Texte qui s'écrit
-  const mots = ['des places de marché.', 'des applis mobiles.', 'des sites rapides.', 'pour Goma.'];
+  const mots = ['des marketplaces.', 'des messageries.', 'des applis mobiles.', 'pour Goma.'];
   const cible = document.getElementById('tape');
   if (calme) cible.textContent = mots[0];
   else {

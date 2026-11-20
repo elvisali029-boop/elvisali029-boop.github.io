@@ -46,9 +46,9 @@
   <text class="titre" x="60" y="262" fill="url(#deg)">Iro007.</text></g>
   <g class="entre d3">
     <text class="sous" x="60" y="318">Je construis</text>
-    <text class="sous mot" x="200" y="318" style="fill:#f4f4f7">des places de marché.</text>
-    <text class="sous mot m2" x="200" y="318" style="fill:#f4f4f7">des applis mobiles.</text>
-    <text class="sous mot m3" x="200" y="318" style="fill:#f4f4f7">des sites rapides.</text>
+    <text class="sous mot" x="200" y="318" style="fill:#f4f4f7">des marketplaces.</text>
+    <text class="sous mot m2" x="200" y="318" style="fill:#f4f4f7">des messageries.</text>
+    <text class="sous mot m3" x="200" y="318" style="fill:#f4f4f7">des applis mobiles.</text>
     <text class="sous mot m4" x="200" y="318" style="fill:#f4f4f7">pour Goma.</text>
   </g>
   <circle class="aura" cx="960" cy="180" r="150" fill="url(#aura)"/>
