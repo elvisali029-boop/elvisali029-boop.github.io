@@ -44,13 +44,14 @@
 <link rel="apple-touch-icon" href="images/photo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&text=%E5%89%B5%E4%BD%9C%E5%93%81%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B%E9%80%A3%E7%B5%A1%E4%B8%80%E4%BA%8C%E4%B8%89&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0b0b12; --card: #151522; --line: rgba(255,255,255,.08);
     --text: #f4f4f7; --muted: #9a9ab0; --orange: #f26b3a; --gold: #e9a91b; --plum: #7a2a63;
     --navy: #14213d; --teal: #2dd4bf; --blue: #3b82f6; --kitty: #5b82dd; --kitty2: #9b5de5;
-    --ease: cubic-bezier(.22,1,.36,1);
+    --ease: cubic-bezier(.16,1,.3,1); --shu: #d64545; --washi: #f3ede2; --mincho: 'Shippori Mincho', 'Noto Serif JP', serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -61,7 +62,7 @@
 
   /* Barre de progression et halo de la souris */
   .progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60; transform-origin: 0 50%; transform: scaleX(0);
-              background: linear-gradient(90deg, var(--blue), var(--orange), var(--gold)); }
+              background: linear-gradient(90deg, var(--shu), var(--orange), var(--washi)); }
   .halo { position: fixed; width: 520px; height: 520px; border-radius: 50%; pointer-events: none; z-index: 0;
           background: radial-gradient(circle, rgba(59,130,246,.10), transparent 60%); transform: translate(-50%,-50%); left: -600px; top: -600px; }
 
@@ -153,7 +154,7 @@
   .bandeau:hover .piste { animation-play-state: paused; }
   .piste span { font-family: "Bricolage Grotesque"; font-size: 26px; font-weight: 700; color: rgba(255,255,255,.28); white-space: nowrap; transition: color .3s; padding-right: 48px; }
   .piste span:hover { color: var(--text); }
-  .piste span::before { content: "✦"; margin-right: 48px; color: var(--orange); opacity: .6; font-size: 16px; vertical-align: 4px; }
+  .piste span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 48px; background: var(--shu); opacity: .75; vertical-align: 6px; }
   @keyframes glisse { to { transform: translateX(-50%); } }
 
   /* Sections */
@@ -218,6 +219,52 @@
   footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
+  /* ───────────── Touche japonaise ───────────── */
+  /* Pétales de sakura (accueil) */
+  .sakura { position: absolute; inset: 0; z-index: 0; pointer-events: none; width: 100%; height: 100%; }
+  /* Ensō : cercle zen au pinceau, qui se trace autour de la photo */
+  .enso { position: absolute; inset: -13%; width: 126%; height: 126%; z-index: 2; pointer-events: none; overflow: visible; }
+  .enso path { fill: none; stroke: var(--washi); stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: trace 2.4s var(--ease) .9s forwards; }
+  .enso .p1 { stroke-width: 3.2; opacity: .55; }
+  .enso .p2 { stroke-width: 1.2; opacity: .3; animation-delay: 1.05s; }
+  @keyframes trace { to { stroke-dashoffset: 0; } }
+  /* Sceau rouge (hanko) qui s'imprime */
+  .titre-nom { position: relative; display: inline-block; }
+  /* (toutes les mesures sont relatives à la taille du caractère du sceau) */
+  .hanko { position: absolute; top: .3em; right: -2.15em; width: 1.6em; height: 1.6em; display: grid; place-items: center;
+           font: 800 .36em/1 var(--mincho); color: #fff6ef; background: var(--shu); border-radius: .16em; letter-spacing: 0;
+           box-shadow: inset 0 0 0 .08em var(--shu), inset 0 0 0 .14em rgba(255,246,239,.85), 0 .25em 1em rgba(214,69,69,.4);
+           transform: rotate(-8deg); opacity: 0; animation: tampon .7s cubic-bezier(.2,1.6,.4,1) 1.5s forwards; }
+  @keyframes tampon { 0% { opacity: 0; transform: rotate(-20deg) scale(2.2); } 60% { opacity: 1; transform: rotate(-6deg) scale(.92); } 100% { opacity: 1; transform: rotate(-8deg) scale(1); } }
+  /* Grands kanji verticaux en filigrane */
+  .kanji { position: absolute; top: 90px; right: max(16px, calc(50% - 600px)); z-index: 0; writing-mode: vertical-rl; pointer-events: none;
+           font: 800 clamp(90px, 13vw, 170px)/1 var(--mincho); color: var(--washi); opacity: .045; letter-spacing: .08em; will-change: transform; user-select: none; white-space: nowrap; }
+  section.bloc > .wrap, .contact > .wrap { position: relative; z-index: 1; }
+  /* Surtitre : numéro en kanji et trait vermillon qui se trace */
+  .surtitre { display: inline-flex; align-items: center; gap: 12px; }
+  .surtitre::before { content: ""; width: 0; height: 2px; background: var(--shu); transition: width 1.2s var(--ease) .15s; }
+  .surtitre.vu::before { width: 42px; }
+  .surtitre .num { font: 600 15px var(--mincho); color: var(--washi); opacity: .6; letter-spacing: 0; }
+  /* Titres : dévoilés comme une encre qui s'étale */
+  .titre.apparait { transform: none; clip-path: inset(0 100% 0 0); filter: blur(6px); opacity: 1;
+                    transition: clip-path 1.6s var(--ease), filter 1.6s var(--ease); transition-delay: var(--d, 0s); }
+  .titre.apparait.vu { clip-path: inset(0 0 0 0); filter: blur(0); }
+  /* Captures : ouvertes comme une porte shōji */
+  .scene.apparait { opacity: 1; transform: none; clip-path: inset(0 50% 0 50%); transition: clip-path 1.5s var(--ease); }
+  .scene.apparait.vu { clip-path: inset(-20% -20% -20% -20%); }
+  .scene.apparait::after { content: ""; position: absolute; top: 10%; bottom: 10%; left: 50%; width: 2px; background: var(--shu); z-index: 3;
+                           box-shadow: 0 0 18px var(--shu); opacity: 0; }
+  .scene.apparait.vu::after { animation: fente 1.5s var(--ease) forwards; }
+  @keyframes fente { 0% { opacity: .9; transform: scaleY(.2); } 40% { opacity: .9; transform: scaleY(1); } 100% { opacity: 0; transform: scaleY(1); } }
+  /* Vagues seigaiha derrière le contact */
+  .contact::before { content: ""; position: absolute; inset: auto 0 0 0; height: 70%; z-index: 0; opacity: .06; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cg fill='none' stroke='%23f3ede2' stroke-width='1.4'%3E%3Cpath d='M0 40a40 40 0 0 1 80 0M10 40a30 30 0 0 1 60 0M20 40a20 20 0 0 1 40 0M30 40a10 10 0 0 1 20 0'/%3E%3Cpath d='M-40 20a40 40 0 0 1 80 0M-30 20a30 30 0 0 1 60 0M-20 20a20 20 0 0 1 40 0M-10 20a10 10 0 0 1 20 0M40 20a40 40 0 0 1 80 0M50 20a30 30 0 0 1 60 0M60 20a20 20 0 0 1 40 0M70 20a10 10 0 0 1 20 0'/%3E%3C/g%3E%3C/svg%3E");
+    mask-image: linear-gradient(to top, #000, transparent); -webkit-mask-image: linear-gradient(to top, #000, transparent);
+    animation: vagues 40s linear infinite; }
+  @keyframes vagues { to { background-position: 80px 0; } }
+  footer .hanko-pied { display: inline-grid; place-items: center; width: 22px; height: 22px; margin-left: 8px; border-radius: 4px; background: var(--shu);
+                       color: #fff4ec; font: 800 12px/1 var(--mincho); transform: rotate(-6deg); vertical-align: -5px; }
+
   /* Apparition au défilement */
   .apparait { opacity: 0; transform: translateY(40px); transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: var(--d, 0s); }
   .apparait.vu { opacity: 1; transform: none; }
@@ -234,6 +281,7 @@
     .scene { padding: 10px 24px 30px 0; }
     section.bloc { padding: 90px 0 20px; }
     .halo, .defile { display: none; }
+    .kanji { top: 60px; font-size: 84px; opacity: .04; }
   }
   @media (max-width: 480px) {
     .cartes { grid-template-columns: 1fr; }
@@ -245,6 +293,9 @@
     html { scroll-behavior: auto; }
     .apparait { opacity: 1; transform: none; }
     .hero h1 .ligne > span { transform: none; }
+    .enso path { stroke-dashoffset: 0; } .hanko { opacity: 1; }
+    .titre.apparait, .scene.apparait { clip-path: none; filter: none; }
+    .surtitre::before { width: 42px; } .sakura { display: none; }
   }
 </style>
 </head>
@@ -262,10 +313,11 @@
 <header class="hero" id="haut">
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="grille"></div>
+  <canvas class="sakura" id="sakura" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
       <div class="badge"><i></i>Développeur web et mobile · Goma, RDC</div>
-      <h1><span class="ligne"><span>Salut, je suis</span></span><span class="ligne"><span class="degrade">Iro007.</span></span></h1>
+      <h1><span class="ligne"><span>Salut, je suis</span></span><span class="ligne"><span class="titre-nom"><span class="degrade">Iro007.</span><span class="hanko" aria-hidden="true">創</span></span></span></h1>
       <div class="tape">Je construis <b id="tape"></b><span class="curseur"></span></div>
       <div class="actions">
         <a class="btn plein" href="#projets">Voir mes projets
@@ -278,6 +330,13 @@
       <div class="aura"></div>
       <div class="anneau"></div>
       <div class="cadre"><img src="images/photo.webp" alt="Photo de profil d'Iro007" width="400" height="400"></div>
+      <svg class="enso" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><filter id="encre" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></defs>
+        <g filter="url(#encre)">
+          <path class="p1" pathLength="1" d="M128 22 C 172 34 192 82 180 124 C 168 168 118 192 76 180 C 32 168 8 120 20 78 C 30 42 62 18 104 17"/>
+          <path class="p2" pathLength="1" d="M134 27 C 175 44 190 90 176 130 C 160 171 112 190 72 175"/>
+        </g>
+      </svg>
       <div class="etiquette e1">RHEEKA<small>marketplace</small></div>
       <div class="etiquette e2">Kitty<small>messagerie</small></div>
     </div>
@@ -294,8 +353,9 @@
 
 <main>
   <section class="bloc" id="projets">
+    <span class="kanji" aria-hidden="true">作品</span>
     <div class="wrap">
-      <div class="surtitre apparait">Projets phares</div>
+      <div class="surtitre apparait"><span class="num">一</span>Projets phares</div>
       <h2 class="titre apparait" style="--d:.08s">Une marketplace, une messagerie,<br>pensées pour Goma.</h2>
 
       <article class="projet rheeka">
@@ -363,8 +423,9 @@
   </section>
 
   <section class="bloc" id="apropos">
+    <span class="kanji" aria-hidden="true">自己紹介</span>
     <div class="wrap">
-      <div class="surtitre apparait">À propos</div>
+      <div class="surtitre apparait"><span class="num">二</span>À propos</div>
       <h2 class="titre apparait" style="--d:.08s">Du code pensé<br>pour le terrain.</h2>
       <div class="apropos">
         <div>
@@ -391,10 +452,11 @@
   </section>
 
   <section class="contact" id="contact">
+    <span class="kanji" aria-hidden="true" style="right:auto;left:max(16px,calc(50% - 600px))">連絡</span>
     <div class="blob b1" style="top:auto;right:auto;left:30%;bottom:-300px;opacity:.25"></div>
     <div class="wrap" style="position:relative">
       <img class="mini apparait" src="images/photo.webp" alt="" width="84" height="84">
-      <div class="surtitre apparait">Contact</div>
+      <div class="surtitre apparait"><span class="num">三</span>Contact</div>
       <h2 class="titre apparait" style="--d:.08s">Un projet en tête ?<br><span class="degrade">Parlons-en.</span></h2>
       <p class="apparait" style="--d:.16s">Une boutique en ligne, une messagerie, une appli, une idée pour Goma : écris-moi.</p>
       <div class="actions apparait" style="--d:.24s">
@@ -406,7 +468,7 @@
   </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Iro007</span><span>Fait à Goma</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Iro007</span><span>Fait à Goma<span class="hanko-pied" aria-hidden="true">創</span></span></div></footer>
 
 <script>
 (() => {
@@ -447,12 +509,21 @@
   const obs = new IntersectionObserver(entrees => {
     entrees.forEach(e => {
       if (!e.isIntersecting) return;
-      e.target.classList.add('vu');
-      e.target.querySelectorAll('[data-compte]').forEach(compte);
+      (e.target.__cibles ?? [e.target]).forEach(el => {
+        el.classList.add('vu');
+        el.querySelectorAll('[data-compte]').forEach(compte);
+      });
       obs.unobserve(e.target);
     });
   }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.apparait').forEach(el => obs.observe(el));
+  // Les éléments entièrement masqués au départ (titres, captures) ne comptent pas comme « à l'écran » :
+  // on surveille leur bloc parent à leur place.
+  document.querySelectorAll('.apparait').forEach(el => {
+    const masque = el.classList.contains('titre') || el.classList.contains('scene');
+    const cible = masque ? el.parentElement : el;
+    (cible.__cibles ??= []).push(el);
+    obs.observe(cible);
+  });
 
   // Barre de progression et lien actif
   const barre = document.getElementById('progress');
@@ -467,6 +538,58 @@
   };
   addEventListener('scroll', auDefilement, { passive: true });
   auDefilement();
+
+  // Kanji en filigrane : glissent un peu moins vite que la page
+  const kanjis = [...document.querySelectorAll('.kanji')];
+  const glisseKanji = () => kanjis.forEach(k => {
+    const r = k.parentElement.getBoundingClientRect();
+    k.style.transform = `translateY(${(innerHeight / 2 - r.top) * .12}px)`;
+  });
+  if (!calme) { addEventListener('scroll', glisseKanji, { passive: true }); glisseKanji(); }
+
+  // Pétales de sakura : peu nombreux, lents ; s'arrêtent hors de l'écran ou onglet caché
+  const toile = document.getElementById('sakura');
+  if (!calme && toile.getContext) {
+    const ctx = toile.getContext('2d');
+    let L = 0, H = 0, dpr = 1, visible = true, dernier = 0;
+    const nb = matchMedia('(max-width: 860px)').matches ? 12 : 22;
+    const couleurs = ['255,183,197', '255,214,224', '250,236,240', '242,160,180'];
+    const nouveau = (haut) => ({
+      x: Math.random() * L, y: haut ? -20 - Math.random() * H * .3 : Math.random() * H,
+      t: 6 + Math.random() * 7, vy: 14 + Math.random() * 18, vx: -6 + Math.random() * 14,
+      a: Math.random() * Math.PI * 2, va: (Math.random() - .5) * 1.2, osc: Math.random() * Math.PI * 2,
+      c: couleurs[Math.floor(Math.random() * couleurs.length)], o: .35 + Math.random() * .45,
+    });
+    let petales = [];
+    const taille = () => {
+      dpr = Math.min(devicePixelRatio || 1, 2); L = toile.clientWidth; H = toile.clientHeight;
+      toile.width = L * dpr; toile.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (!petales.length) petales = Array.from({ length: nb }, () => nouveau(false));
+    };
+    const petale = (p) => {
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.scale(1, Math.abs(Math.cos(p.osc)) * .6 + .4);
+      ctx.fillStyle = `rgba(${p.c},${p.o})`;
+      ctx.beginPath(); ctx.moveTo(0, -p.t);
+      ctx.bezierCurveTo(p.t * .9, -p.t * .6, p.t * .7, p.t * .7, 0, p.t);
+      ctx.bezierCurveTo(-p.t * .7, p.t * .7, -p.t * .9, -p.t * .6, -p.t * .18, -p.t * .82);
+      ctx.lineTo(0, -p.t * .6); ctx.closePath(); ctx.fill(); ctx.restore();
+    };
+    const image = (t) => {
+      const dt = Math.min(.05, (t - (dernier || t)) / 1000); dernier = t;
+      if (visible && !document.hidden) {
+        ctx.clearRect(0, 0, L, H);
+        petales.forEach((p, i) => {
+          p.osc += dt * 1.6; p.a += p.va * dt;
+          p.x += (p.vx + Math.sin(p.osc) * 16) * dt; p.y += p.vy * dt;
+          if (p.y > H + 20 || p.x < -30 || p.x > L + 30) petales[i] = nouveau(true);
+          petale(p);
+        });
+      } else dernier = 0;
+      requestAnimationFrame(image);
+    };
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(toile);
+    addEventListener('resize', taille); taille(); requestAnimationFrame(image);
+  }
 
   if (calme || matchMedia('(hover: none)').matches) return;
 
