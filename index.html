@@ -215,6 +215,10 @@
   .contact .titre { font-size: clamp(40px, 8vw, 96px); }
   .contact p { color: var(--muted); font-size: 18px; margin: 20px auto 34px; max-width: 520px; }
   .contact .actions { justify-content: center; }
+  .btn.discord { cursor: pointer; font-family: inherit; color: var(--text); background: rgba(88,101,242,.16); border-color: rgba(88,101,242,.55); }
+  .btn.discord:hover { border-color: #5865f2; }
+  .btn.discord b { font-weight: 700; }
+  .contact p.coord { font-size: 14px; margin: 22px auto 0; user-select: all; }
   .contact .mini { width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 22px; display: block; box-shadow: 0 0 0 4px rgba(59,130,246,.25), 0 0 40px rgba(59,130,246,.4); }
   footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
@@ -462,8 +466,10 @@
       <div class="actions apparait" style="--d:.24s">
         <a class="btn plein" href="mailto:elvisali029@gmail.com">M'écrire
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <button class="btn discord" type="button" data-pseudo="iro0070882" aria-label="Copier mon pseudo Discord : iro0070882">Discord · <b>iro0070882</b></button>
         <a class="btn" href="https://github.com/elvisali029-boop">GitHub</a>
       </div>
+      <p class="coord apparait" style="--d:.3s">elvisali029@gmail.com &nbsp;·&nbsp; Discord : iro0070882</p>
     </div>
   </section>
 </main>
@@ -473,6 +479,16 @@
 <script>
 (() => {
   const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Discord : copier le pseudo
+  document.querySelectorAll('.btn.discord').forEach(b => {
+    const texte = b.innerHTML;
+    b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(b.dataset.pseudo); b.textContent = 'Pseudo copié'; }
+      catch { b.textContent = b.dataset.pseudo; }
+      setTimeout(() => { b.innerHTML = texte; }, 1800);
+    });
+  });
 
   // Texte qui s'écrit
   const mots = ['des marketplaces.', 'des messageries.', 'des applis mobiles.', 'pour Goma.'];
