@@ -42,7 +42,7 @@ def terminal():
         ('out', 'Des applis qui tiennent le terrain : réseau qui coupe,'),
         ('out', 'téléphones modestes, paiement par mobile money.'),
         ('cmd', 'ls projets/'),
-        ('dir', 'RHEEKA/    Kitty/     Manga_site/'),
+        ('dir', 'RHEEKA/    Kitty/     Estory/    Manga_site/'),
         ('cmd', 'cat stack.txt'),
         ('out', 'Flutter · React · TypeScript · Supabase · PostgreSQL · LiveKit'),
         ('cmd', 'echo $STATUT'),
@@ -137,8 +137,8 @@ def contact():
 
 def chiffres():
     """Quatre grands chiffres qui montent l'un après l'autre."""
-    items = [('2', 'applis en ligne', 'RHEEKA et Kitty', '#f26b3a'),
-             ('560+', 'tests de base de données', 'chaque règle vérifiée', '#3b82f6'),
+    items = [('3', 'applis en ligne', 'RHEEKA, Kitty, Estory', '#f26b3a'),
+             ('600+', 'tests de base de données', 'chaque règle vérifiée', '#3b82f6'),
              ('18', 'quartiers de Goma', 'dessinés sur la carte', '#e9a91b'),
              ('72', 'stickers originaux', 'dessinés pour Kitty', '#2dd4bf')]
     corps = ''

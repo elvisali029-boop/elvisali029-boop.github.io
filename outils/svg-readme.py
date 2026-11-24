@@ -156,6 +156,9 @@ def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces):
 (out / 'kitty.svg').write_text(carte('Kitty', 'kitty', '02 · MESSAGERIE', '#8fb0ff', '#9b5de5', '#5b82dd',
     ['Écris. Appelle. Partage.', 'Appels vidéo, groupes, statuts de 24 h,', 'sondages, position, 72 stickers maison.', 'La confidentialité est tenue par la base.'],
     ['React', 'TypeScript', 'Realtime', 'LiveKit', 'Web Push']), encoding='utf-8')
+(out / 'estory.svg').write_text(carte('Estory', 'estory', '03 · LECTURE ET PUBLICATION', '#ff9b7d', '#ff7148', '#8a3fb0',
+    ['Lis. Publie. Suis tes séries.', 'Mangas, webtoons, comics, romans, livres,', 'chapitre par chapitre. Auteurs validés,', 'liseuse adaptée à chaque format.'],
+    ['React', 'TypeScript', 'Supabase', 'Storage', 'Playwright']), encoding='utf-8')
 
 # 3. Bandeau des technologies qui défile
 techs = ['React', 'TypeScript', 'Flutter', 'Supabase', 'PostgreSQL', 'PostGIS', 'Vite', 'MapLibre', 'LiveKit', 'Web Push', 'Vercel', 'Android']
