@@ -43,6 +43,8 @@ def terminal():
         ('out', 'téléphones modestes, paiement par mobile money.'),
         ('cmd', 'ls projets/'),
         ('dir', 'RHEEKA/   Kitty/   Estory/   Rice/   Manga_site/'),
+        ('cmd', 'cat setup.txt'),
+        ('out', 'CachyOS · Hyprland · widgets QML maison (Quickshell)'),
         ('cmd', 'cat stack.txt'),
         ('out', 'Flutter · React · TypeScript · Supabase · PostgreSQL · LiveKit'),
         ('cmd', 'echo $STATUT'),
