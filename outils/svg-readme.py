@@ -90,13 +90,17 @@ banniere = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360"
 (out / 'banniere.svg').write_text(banniere, encoding='utf-8')
 
 # 2. Cartes projet
-def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces):
+def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces, tel=True):
     texte = ''.join(f'<text class="txt" x="56" y="{232 + 30*i}">{l}</text>' for i, l in enumerate(lignes))
     x, chips = 56, ''
     for p in puces:
         w = 18 + len(p) * 9
         chips += f'<rect x="{x}" y="372" width="{w}" height="32" rx="8" fill="none" stroke="#fff" stroke-opacity=".12"/><text class="chip" x="{x + w/2}" y="393" text-anchor="middle">{p}</text>'
         x += w + 8
+    telephone = (f'''<g class="tel">
+      <rect x="1004" y="164" width="142" height="272" rx="24" fill="#1c1c28"/>
+      <image href="{img(fichier + '-tel.webp')}" x="1010" y="170" width="130" height="260" preserveAspectRatio="xMidYMin slice" clip-path="url(#telc)"/>
+    </g>''' if tel else '')
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480">
 <style>
   .nom {{ font: 800 64px {POLICE}; letter-spacing: -2px; fill: #f4f4f7; }}
@@ -142,10 +146,7 @@ def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces):
       <image href="{img(fichier + '-ordi.webp')}" x="620" y="96" width="480" height="300" preserveAspectRatio="xMidYMin slice" clip-path="url(#ecran)"/>
       <g clip-path="url(#ecran)"><rect class="reflet" x="620" y="70" width="160" height="326" fill="url(#r)"/></g>
     </g>
-    <g class="tel">
-      <rect x="1004" y="164" width="142" height="272" rx="24" fill="#1c1c28"/>
-      <image href="{img(fichier + '-tel.webp')}" x="1010" y="170" width="130" height="260" preserveAspectRatio="xMidYMin slice" clip-path="url(#telc)"/>
-    </g>
+    {telephone}
   </g>
 </g>
 </svg>'''
@@ -161,7 +162,7 @@ def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces):
     ['React', 'TypeScript', 'Realtime', 'Web Push', 'Android']), encoding='utf-8')
 (out / 'rice.svg').write_text(carte('Mon bureau', 'rice', '04 · RICE LINUX · HYPRLAND', '#f28cbf', '#e0559b', '#6d4bd8',
     ['Mon bureau, codé à la main.', 'Widgets QML : météo, tâches, paroles,', "agenda, système, GitHub. Couleurs du fond", "d'écran, texte lisible sur 151 fonds."],
-    ['Hyprland', 'Quickshell', 'QML', 'Lua', 'Python']), encoding='utf-8')
+    ['Hyprland', 'Quickshell', 'QML', 'Lua', 'Python'], tel=False), encoding='utf-8')
 
 # 3. Bandeau des technologies qui défile
 techs = ['React', 'TypeScript', 'Flutter', 'Supabase', 'PostgreSQL', 'PostGIS', 'Vite', 'MapLibre', 'LiveKit', 'Web Push', 'Capacitor', 'Vercel', 'Android', 'Hyprland']
