@@ -42,7 +42,7 @@ def terminal():
         ('out', 'Des applis qui tiennent le terrain : réseau qui coupe,'),
         ('out', 'téléphones modestes, paiement par mobile money.'),
         ('cmd', 'ls projets/'),
-        ('dir', 'RHEEKA/    Kitty/     Estory/    Manga_site/'),
+        ('dir', 'RHEEKA/   Kitty/   Estory/   Rice/   Manga_site/'),
         ('cmd', 'cat stack.txt'),
         ('out', 'Flutter · React · TypeScript · Supabase · PostgreSQL · LiveKit'),
         ('cmd', 'echo $STATUT'),
@@ -165,7 +165,7 @@ def chiffres():
     (out / 'chiffres.svg').write_text(svg, encoding='utf-8')
 
 titre('titre-apropos.svg', '01', 'À propos', 'qui je suis, ce que je construis')
-titre('titre-projets.svg', '02', 'Projets', 'une marketplace, une messagerie')
+titre('titre-projets.svg', '02', 'Projets', 'mes applis et mon bureau')
 titre('titre-stack.svg', '03', 'Stack', 'les outils de tous les jours')
 titre('titre-chiffres.svg', '04', 'En chiffres', 'ce qui tourne déjà')
 titre('titre-contact.svg', '05', 'Contact', 'on construit ensemble ?')

@@ -157,11 +157,14 @@ def carte(nom, fichier, tag, accent, lueur1, lueur2, lignes, puces):
     ['Écris. Appelle. Partage.', 'Appels vidéo, groupes, statuts de 24 h,', 'sondages, position, 72 stickers maison.', 'La confidentialité est tenue par la base.'],
     ['React', 'TypeScript', 'Realtime', 'LiveKit', 'Web Push']), encoding='utf-8')
 (out / 'estory.svg').write_text(carte('Estory', 'estory', '03 · LECTURE ET PUBLICATION', '#ff9b7d', '#ff7148', '#8a3fb0',
-    ['Lis. Publie. Suis tes séries.', 'Mangas, webtoons, BD africaines, romans,', 'chapitre par chapitre. Auteurs validés,', 'liseuse adaptée à chaque format.'],
-    ['React', 'TypeScript', 'Supabase', 'Storage', 'Playwright']), encoding='utf-8')
+    ['Lis. Publie. Sois prévenu.', 'Mangas, webtoons, BD africaines, romans.', 'En direct, notifications push même site', 'fermé, et une vraie appli Android.'],
+    ['React', 'TypeScript', 'Realtime', 'Web Push', 'Android']), encoding='utf-8')
+(out / 'rice.svg').write_text(carte('Mon bureau', 'rice', '04 · RICE LINUX · HYPRLAND', '#f28cbf', '#e0559b', '#6d4bd8',
+    ['Mon bureau, codé à la main.', 'Widgets QML : météo, tâches, paroles,', "agenda, système, GitHub. Couleurs du fond", "d'écran, texte lisible sur 151 fonds."],
+    ['Hyprland', 'Quickshell', 'QML', 'Lua', 'Python']), encoding='utf-8')
 
 # 3. Bandeau des technologies qui défile
-techs = ['React', 'TypeScript', 'Flutter', 'Supabase', 'PostgreSQL', 'PostGIS', 'Vite', 'MapLibre', 'LiveKit', 'Web Push', 'Vercel', 'Android']
+techs = ['React', 'TypeScript', 'Flutter', 'Supabase', 'PostgreSQL', 'PostGIS', 'Vite', 'MapLibre', 'LiveKit', 'Web Push', 'Capacitor', 'Vercel', 'Android', 'Hyprland']
 x, items = 0, ''
 for t in techs * 2:
     items += f'<text x="{x}" y="47">{t}</text><circle cx="{x + len(t)*15 + 28}" cy="38" r="4.5" fill="#d64545" fill-opacity=".8"/>'

@@ -37,7 +37,7 @@
   "hasPart": [
     { "@type": "WebApplication", "name": "RHEEKA", "url": "https://rheeka.com", "applicationCategory": "ShoppingApplication", "description": "Marketplace de Goma : articles livrés à moto, locations, services, paiement mobile money en séquestre.", "author": { "@type": "Person", "name": "Iro007" } },
     { "@type": "WebApplication", "name": "Kitty", "url": "https://kitty-goma.vercel.app", "applicationCategory": "CommunicationApplication", "description": "Messagerie : discussions en direct, groupes, appels audio et vidéo, statuts 24 h, notifications.", "author": { "@type": "Person", "name": "Iro007" } },
-    { "@type": "WebApplication", "name": "Estory", "url": "https://estory-lecture.vercel.app", "applicationCategory": "EntertainmentApplication", "description": "Plateforme de lecture et de publication : mangas, webtoons, comics, BD africaines, romans et livres, chapitre par chapitre ; auteurs validés, liseuse adaptée à chaque format.", "author": { "@type": "Person", "name": "Iro007" } }
+    { "@type": "WebApplication", "name": "Estory", "url": "https://estory-lecture.vercel.app", "applicationCategory": "EntertainmentApplication", "description": "Plateforme de lecture et de publication : mangas, webtoons, comics, BD africaines, romans et livres, chapitre par chapitre ; auteurs validés, liseuse adaptée à chaque format, direct et notifications push, appli Android.", "author": { "@type": "Person", "name": "Iro007" } }
   ]
 }
 </script>
@@ -51,7 +51,7 @@
   :root {
     --bg: #0b0b12; --card: #151522; --line: rgba(255,255,255,.08);
     --text: #f4f4f7; --muted: #9a9ab0; --orange: #f26b3a; --gold: #e9a91b; --plum: #7a2a63;
-    --navy: #14213d; --teal: #2dd4bf; --blue: #3b82f6; --kitty: #5b82dd; --kitty2: #9b5de5; --estory: #ff7148; --estory2: #8a3fb0;
+    --navy: #14213d; --teal: #2dd4bf; --blue: #3b82f6; --kitty: #5b82dd; --kitty2: #9b5de5; --estory: #ff7148; --estory2: #8a3fb0; --rice: #e0559b; --rice2: #6d4bd8;
     --ease: cubic-bezier(.16,1,.3,1); --shu: #d64545; --washi: #f3ede2; --mincho: 'Shippori Mincho', 'Noto Serif JP', serif;
   }
   * { box-sizing: border-box; }
@@ -171,6 +171,7 @@
   .rheeka .lueur { background: linear-gradient(135deg, var(--orange), var(--navy)); }
   .kitty .lueur { background: linear-gradient(135deg, var(--kitty2), var(--kitty)); }
   .estory .lueur { background: linear-gradient(135deg, var(--estory), var(--estory2)); }
+  .rice .lueur { background: linear-gradient(135deg, var(--rice), var(--rice2)); }
   .inclinable { position: relative; z-index: 1; transform-style: preserve-3d; transition: transform .6s var(--ease); }
   .ecran { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 40px 80px -30px rgba(0,0,0,.8); background: #000; }
   .ecran .barre { height: 26px; display: flex; gap: 6px; align-items: center; padding: 0 12px; background: #1c1c28; }
@@ -180,10 +181,11 @@
   .tel { position: absolute; right: 0; bottom: 0; width: 30%; border-radius: 26px; overflow: hidden; border: 5px solid #1c1c28;
          box-shadow: 0 30px 60px -20px rgba(0,0,0,.9); transform: translateZ(60px); animation: flotte 6s ease-in-out infinite; }
   .infos .tag { display: inline-flex; font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
-  .rheeka { --accent: var(--orange); } .kitty { --accent: var(--kitty); } .estory { --accent: var(--estory); }
+  .rheeka { --accent: var(--orange); } .kitty { --accent: var(--kitty); } .estory { --accent: var(--estory); } .rice { --accent: var(--rice); }
   .rheeka .tag { background: rgba(242,107,58,.12); color: var(--orange); }
   .kitty .tag { background: rgba(91,130,221,.14); color: #8fb0ff; }
   .estory .tag { background: rgba(255,113,72,.13); color: #ff9b7d; }
+  .rice .tag { background: rgba(224,85,155,.14); color: #f28cbf; }
   .infos h3 { font-size: clamp(40px, 5vw, 60px); letter-spacing: -.04em; margin: 14px 0 10px; line-height: 1; }
   .infos > p { color: var(--muted); margin: 0 0 22px; font-size: 17px; }
   .points { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 10px; }
@@ -313,6 +315,7 @@
 <nav>
   <a class="logo" href="#haut"><img src="images/photo.webp" alt="" width="30" height="30">Iro<span>007</span></a>
   <a href="#projets">Projets</a>
+  <a href="#rice" class="cache">Rice</a>
   <a href="#apropos" class="cache">À propos</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -354,8 +357,8 @@
 
 <div class="bandeau" aria-hidden="true">
   <div class="piste">
-    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>LiveKit</span><span>Web Push</span><span>Vercel</span><span>Android</span>
-    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>LiveKit</span><span>Web Push</span><span>Vercel</span><span>Android</span>
+    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>LiveKit</span><span>Web Push</span><span>Capacitor</span><span>Vercel</span><span>Android</span><span>Hyprland</span><span>QML</span>
+    <span>React</span><span>TypeScript</span><span>Supabase</span><span>PostgreSQL</span><span>PostGIS</span><span>Flutter</span><span>Vite</span><span>MapLibre</span><span>LiveKit</span><span>Web Push</span><span>Capacitor</span><span>Vercel</span><span>Android</span><span>Hyprland</span><span>QML</span>
   </div>
 </div>
 
@@ -440,22 +443,60 @@
         <div class="infos">
           <span class="tag apparait">03 · Lecture</span>
           <h3 class="apparait" style="--d:.05s">Estory</h3>
-          <p class="apparait" style="--d:.1s">Lire et publier des mangas, webtoons, comics, BD africaines, romans et livres, chapitre par chapitre. Les auteurs sont validés par l'équipe ; les lecteurs suivent leurs séries, aiment, commentent et reprennent où ils se sont arrêtés.</p>
+          <p class="apparait" style="--d:.1s">Lire et publier des mangas, webtoons, comics, BD africaines, romans et livres, chapitre par chapitre. Les auteurs sont validés par l'équipe ; les lecteurs suivent leurs séries et sont prévenus dès qu'un chapitre sort, sur le web comme dans l'appli Android.</p>
           <ul class="points apparait" style="--d:.15s">
             <li>Liseuse adaptée : bande verticale, page par page (sens japonais), roman</li>
-            <li>Atelier d'auteur : brouillons, images réduites et découpées dans le navigateur</li>
-            <li>Brouillons et pages privés, tenus par les règles de la base</li>
-            <li>Modération : demandes d'auteur, signalements, séries masquées</li>
+            <li>En direct, sans recharger : nouveaux chapitres, j'aime, commentaires</li>
+            <li>Notifications push même site fermé ; les auteurs sont prévenus des commentaires et des abonnés</li>
+            <li>Vraie appli Android (Capacitor) avec connexion Google, et un design « bande dessinée »</li>
+            <li>Atelier d'auteur et modération : brouillons privés, demandes d'auteur, signalements</li>
           </ul>
           <div class="chiffres apparait" style="--d:.2s">
             <div><b data-compte="6">6</b><span>formats d'œuvre</span></div>
-            <div><b data-compte="47">47</b><span>tests de la base</span></div>
-            <div><b data-compte="15">15</b><span>étapes d'essai navigateur</span></div>
+            <div><b data-compte="70" data-plus>70+</b><span>tests de la base</span></div>
+            <div><b data-compte="8">8</b><span>migrations SQL</span></div>
           </div>
-          <div class="puces apparait" style="--d:.25s"><span>React</span><span>TypeScript</span><span>Supabase Storage</span><span>PostgreSQL RLS</span><span>Canvas / WebP</span><span>Playwright</span></div>
+          <div class="puces apparait" style="--d:.25s"><span>React</span><span>TypeScript</span><span>Supabase Realtime</span><span>Web Push</span><span>Capacitor</span><span>Android</span></div>
           <a class="btn plein apparait" style="--d:.3s" href="https://estory-lecture.vercel.app">Ouvrir Estory
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <p class="note">Nouveau : catalogue en cours de remplissage (captures avec des séries de démonstration). Code source privé.</p>
+          <p class="note">Catalogue en cours de remplissage (captures avec des séries de démonstration). Appli Android en test. Code source privé.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bloc" id="rice">
+    <span class="kanji" aria-hidden="true">机</span>
+    <div class="wrap">
+      <div class="surtitre apparait"><span class="num">二</span>Rice Linux</div>
+      <h2 class="titre apparait" style="--d:.08s">Mon bureau,<br>codé à la main.</h2>
+
+      <article class="projet rice inverse">
+        <div class="scene apparait">
+          <div class="lueur"></div>
+          <div class="inclinable">
+            <div class="ecran"><div class="barre"><i></i><i></i><i></i></div>
+              <img src="images/rice-ordi.webp" alt="Mon bureau Hyprland : horloge, météo, tâches, paroles, agenda, système et GitHub sur le fond d'écran" width="1440" height="810"></div>
+            <div class="tel"><img src="images/rice-tel.webp" alt="Gros plan sur les widgets : météo avec le chat, tâches, paroles synchronisées, lecteur" width="520" height="1080"></div>
+          </div>
+        </div>
+        <div class="infos">
+          <span class="tag apparait">04 · Rice · CachyOS + Hyprland</span>
+          <h3 class="apparait" style="--d:.05s">Mon bureau</h3>
+          <p class="apparait" style="--d:.1s">Un bureau Linux que j'ai personnalisé et programmé moi-même : des widgets posés sur le fond d'écran, qui prennent ses couleurs et restent lisibles quelle que soit l'image.</p>
+          <ul class="points apparait" style="--d:.15s">
+            <li>Widgets maison en QML : météo, tâches, agenda, système, GitHub</li>
+            <li>Paroles synchronisées et lecteur, avec un perso qui danse sur la barre de progression</li>
+            <li>Horloge « en profondeur » : le sujet de la photo passe devant l'heure</li>
+            <li>Contraste calculé pour chaque fond d'écran : texte lisible sur les 151 testés</li>
+          </ul>
+          <div class="chiffres apparait" style="--d:.2s">
+            <div><b data-compte="7">7</b><span>widgets maison</span></div>
+            <div><b data-compte="151">151</b><span>fonds d'écran testés</span></div>
+            <div><b data-compte="4">4</b><span>de contraste minimum</span></div>
+          </div>
+          <div class="puces apparait" style="--d:.25s"><span>Hyprland</span><span>Quickshell</span><span>QML</span><span>Lua</span><span>Python</span><span>CachyOS</span></div>
+          <p class="note">Couleurs tirées du fond d'écran par Caelestia ; widgets, horloge et réglages écrits pour ce bureau.</p>
         </div>
       </article>
     </div>
@@ -464,7 +505,7 @@
   <section class="bloc" id="apropos">
     <span class="kanji" aria-hidden="true">自己紹介</span>
     <div class="wrap">
-      <div class="surtitre apparait"><span class="num">二</span>À propos</div>
+      <div class="surtitre apparait"><span class="num">三</span>À propos</div>
       <h2 class="titre apparait" style="--d:.08s">Du code pensé<br>pour le terrain.</h2>
       <div class="apropos">
         <div>
@@ -495,7 +536,7 @@
     <div class="blob b1" style="top:auto;right:auto;left:30%;bottom:-300px;opacity:.25"></div>
     <div class="wrap" style="position:relative">
       <img class="mini apparait" src="images/photo.webp" alt="" width="84" height="84">
-      <div class="surtitre apparait"><span class="num">三</span>Contact</div>
+      <div class="surtitre apparait"><span class="num">四</span>Contact</div>
       <h2 class="titre apparait" style="--d:.08s">Un projet en tête ?<br><span class="degrade">Parlons-en.</span></h2>
       <p class="apparait" style="--d:.16s">Une boutique en ligne, une messagerie, une appli, une idée pour Goma : écris-moi.</p>
       <div class="actions apparait" style="--d:.24s">
